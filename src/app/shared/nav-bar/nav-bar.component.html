@@ -9,5 +9,10 @@
       </svg>
       <span>WEATHER</span>
     </a>
+    @for (item of menuItems; track $index ) {
+
+    <a [routerLink]="item.path" routerLinkActive="bg-blue-800">{{item.title}}</a>
+
+    }
   </div>
 </nav>
