@@ -1,1 +1,29 @@
-<p>home works!</p>
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">Tiempo en {{weatherDate?.location?.country}}</h5>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <h6 class="card-subtitle mb-2 text-muted">Ubicación {{weatherDate?.location?.name}} </h6>
+          <p>Fecha de la medida: {{weatherDate?.location?.localtime | date:'dd/MM/yyyy'}}</p>
+          <p>Hora de la medida: {{weatherDate?.current?.observation_time}}</p>
+          <p>Latitud: {{weatherDate?.location?.lat}}º</p>
+          <p>Longitud: {{weatherDate?.location?.lon}}º</p>
+        </div>
+        <div class="col-md-6">
+          <h6 class="card-subtitle mb-2 text-muted">Tiempo actual</h6>
+          <p>Temperatura: {{weatherDate?.current?.temperature}}º <img [src]="weatherDate?.current?.weather_icons"></p>
+          <p>Descripción: {{weatherDate?.current?.weather_descriptions}}</p>
+          <p>Velocidad del viento: {{weatherDate?.current?.wind_speed}} km/h</p>
+          <p>Dirección del viento: {{weatherDate?.current?.wind_dir}} - {{weatherDate?.current?.wind_degree}}º</p>
+          <p>Presion: {{weatherDate?.current?.pressure}} MB - milibar</p>
+          <p>Precipitaciones: {{weatherDate?.current?.precip}} MM - milímetros</p>
+          <p>Humedad: {{weatherDate?.current?.humidity}} %</p>
+          <p>Visibilidad: {{weatherDate?.current?.visibility}} km</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
